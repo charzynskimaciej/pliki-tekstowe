@@ -1,3 +1,6 @@
+
+zadanie 1.
+
 create table postac(id_postaci int not null auto_increment primary key,
     -> nazwa varchar(40),
     -> rodzaj ENUM ('wiking', 'ptak', 'kobieta'),
@@ -9,3 +12,20 @@ insert into postac values (0,'Drozd','ptak','2021-10-27',1);
 insert into postac values (0,'Tesciowa','kobieta','1935-10-27',87);
 
 update postac set data_ur='1934-10-27', wiek=88 WHERE nazwa LIKE 'Tesciowa';
+
+select * from postac;
+
+
+zadanie 2.
+
+create table walizka(id_walizki int auto_increment primary key,
+    -> pojemnosc int unsigned,
+    -> kolor ENUM ('rozowy','czerwony','teczowy','zolty'),
+    -> id_wlasciciela int,
+    -> FOREIGN KEY(id_wlasciciela)
+    -> REFERENCES postac(id_postaci)
+    -> ON DELETE CASCADE);
+
+ alter table walizka
+    -> alter kolor set default 'rozowy';
+
