@@ -1,4 +1,6 @@
 
+Charzynski Maciej
+
 zadanie 1.
 
 create table postac(id_postaci int not null auto_increment primary key,
