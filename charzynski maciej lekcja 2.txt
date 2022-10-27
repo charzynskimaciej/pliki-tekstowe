@@ -36,6 +36,7 @@ alter table izba ADD CONSTRAINT fk_wlasciciel FOREIGN KEY (wlasciciel)
 
 alter table izba add column kolor varchar(30) after metraz;
 alter kolor set default 'czarny';
+insert into izba values('Borkowskiego 11', 'Spizarnia', 312, 'zielony', 1);
 
 
 
