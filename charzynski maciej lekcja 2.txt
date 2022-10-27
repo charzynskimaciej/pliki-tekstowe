@@ -1,6 +1,4 @@
-
 Charzynski Maciej
-
 zadanie 1.
 
 create table postac(id_postaci int not null auto_increment primary key,
@@ -30,4 +28,14 @@ create table walizka(id_walizki int auto_increment primary key,
 
  alter table walizka
     -> alter kolor set default 'rozowy';
+
+zadanie 3.
+
+alter table izba ADD CONSTRAINT fk_wlasciciel FOREIGN KEY (wlasciciel)
+ REFERENCES postac(id_postaci) ON DELETE       SET NULL;
+
+alter table izba add column kolor varchar(30) after metraz;
+alter kolor set default 'czarny';
+
+
 
