@@ -1,0 +1,11 @@
+create table postac(id_postaci int not null auto_increment primary key,
+    -> nazwa varchar(40),
+    -> rodzaj ENUM ('wiking', 'ptak', 'kobieta'),
+    -> data_ur DATE,
+    -> wiek int unsigned);
+
+insert into postac values (0, 'Bjorn', 'wiking', '1980-01-01', 42);
+insert into postac values (0,'Drozd','ptak','2021-10-27',1);
+insert into postac values (0,'Tesciowa','kobieta','1935-10-27',87);
+
+update postac set data_ur='1934-10-27', wiek=88 WHERE nazwa LIKE 'Tesciowa';
