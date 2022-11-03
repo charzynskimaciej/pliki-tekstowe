@@ -31,12 +31,26 @@ create table walizka(id_walizki int auto_increment primary key,
 
 zadanie 3.
 
-alter table izba ADD CONSTRAINT fk_wlasciciel FOREIGN KEY (wlasciciel)
- REFERENCES postac(id_postaci) ON DELETE       SET NULL;
+
+create table izba(
+    -> adres_budynku varchar(35),
+    -> nazwa_izby varchar(35),
+    -> metraz int unsigned,
+    -> wlasciciel int,
+    -> foreign key (wlasciciel) references postac(id_postaci)
+    -> on delete set null,
+    -> constraint pk_izby primary key (adres_budynku,nazwa_izby)
+    -> );
+
 
 alter table izba add column kolor varchar(30) after metraz;
-alter kolor set default 'czarny';
+
+
+ alter table izba
+ alter kolor set default 'czarny';
+
+
 insert into izba values('Borkowskiego 11', 'Spizarnia', 312, 'zielony', 1);
 
-
+zadanie 4.
 
