@@ -66,3 +66,56 @@ create table przetwory(
     -> );
 
  insert into przetwory values(0,2021,1,'bigos','papryczka chilli',3);
+ 
+ zadanie 5.
+
+mysql> insert into postac values(0,'Arne','wiking','1982-11-03', 40);
+mysql> insert into postac values(0,'Birger','wiking','1982-11-04', 40);
+mysql> insert into postac values(0,'Erik','wiking','1982-11-05', 40);
+mysql> insert into postac values (0,'Frode','wiking','1982-11-06', 40);
+mysql> insert into postac values (0,'Gorm','wiking','1982-11-07', 40);
+
+create table statek(
+    -> nazwa_statku varchar(35) primary key not null,
+    -> rodzaj_statku enum('szybki','wolny'),
+    -> data_wodowania date,
+    -> max_ladownosc int);
+
+
+insert into statek values('szybki statek','szybki','2022-11-02',350);
+insert into statek values('wolny statek','wolny','2022-10-15', 750);
+
+alter table postac add column funkcja varchar(20);
+
+ update postac
+    -> set funkcja = 'kapitan'
+    -> where nazwa like 'Bjorn';
+
+
+
+mysql> alter table postac
+    -> add column nazwa_statku varchar(35),
+    -> add foreign key(nazwa_statku) references statek(nazwa_statku);
+
+
+ update postac
+    -> set nazwa_statku = 'szybki statek'
+    -> where nazwa like ('Bjorn');
+
+ update postac
+    -> set nazwa_statku = 'szybki statek'
+    -> where nazwa like ('Drozd');
+
+update postac
+    -> set nazwa_statku = 'wolny statek'
+    -> where id_postaci > 3;
+
+
+ delete from izba where nazwa_izby='Spizarnia';
+
+ drop table izba;
+
+
+
+
+
