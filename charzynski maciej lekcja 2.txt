@@ -1,0 +1,57 @@
+lekcja 2
+
+zadanie 1.
+
+select nazwa from postac order by data_ur desc;
+
+delete from postac where nazwa like 'Gorm';
+delete from postac where nazwa like 'Frode';
+
+show create table walizka;
+alter table walizka
+    -> drop constraint `walizka_ibfk_1`;
+
+show create table przetwory;
+alter table przetwory
+    -> drop constraint `przetwory_ibfk_1`;
+
+ alter table przetwory
+    -> drop constraint `przetwory_ibfk_2`;
+
+alter table postac modify column id_postaci int;
+
+alter table postac
+    -> drop primary key;
+
+zadanie 2.
+
+alter table postac
+    -> drop constraint `postac_ibfk_1`;
+ alter table postac
+    -> drop key `nazwa_statku`;
+alter table postac modify id_postaci int;
+
+alter table przetwory
+    -> drop key `id_wykonawcy`;
+alter table przetwory
+    -> drop key `id_konsumenta`;
+alter table walizka
+    -> drop key `id_wlasciciela`;
+
+ alter table postac
+    -> drop column id_postaci;
+
+alter table postac
+    -> add column id_postaci int first;
+
+alter table postac
+    -> modify column id_postaci int(8) primary key not null auto_increment;
+
+alter table postac
+    -> modify column id_postaci int;
+
+ alter table postac
+    -> drop primary key;
+
+mysql> alter table postac
+    -> modify column id_postaci bigint primary key not null auto_increment;
