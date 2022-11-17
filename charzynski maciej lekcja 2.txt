@@ -25,6 +25,8 @@ alter table postac
 
 zadanie 2.
 
+a)
+
 alter table postac
     -> drop constraint `postac_ibfk_1`;
  alter table postac
@@ -55,3 +57,59 @@ alter table postac
 
 mysql> alter table postac
     -> modify column id_postaci bigint primary key not null auto_increment;
+
+update postac
+    -> set id_postaci=11111111111
+    -> where nazwa='Bjorn';
+
+update postac set id_postaci=11111111112 where nazwa='Drozd';
+update postac set id_postaci=11111111113 where nazwa='Tesciowa';
+update postac set id_postaci=11111111114 where nazwa='Arne';
+update postac set id_postaci=11111111115 where nazwa='Birger';
+update postac set id_postaci=11111111116 where nazwa='Erik';
+
+ alter table postac
+    -> drop column id_postaci;
+
+alter table postac
+    -> add column pesel bigint primary key auto_increment not null;
+
+alter table postac
+    -> add column id_postaci int auto_increment first;
+
+ update postac
+    -> set id_postaci = 1 where nazwa='Bjorn';
+
+update postac set id_postaci = 2 where nazwa='Drozd';
+update postac set id_postaci = 3 where nazwa='Tesciowa';
+update postac set id_postaci = 4 where nazwa='Arne';
+update postac set id_postaci = 5 where nazwa='Birger';
+update postac set id_postaci = 6 where nazwa='Erik';
+
+b)
+
+alter table postac
+    -> modify column rodzaj enum('wiking','ptak','kobieta','syrena');
+
+c)
+
+ insert into postac values
+    -> (7,'Gertruda Nieszczera','syrena','2002-08-11','20','','',11111111198);
+
+
+zadanie 3
+
+update postac
+    -> set nazwa_statku = 'szybki statek' WHERE nazwa LIKE '%a%';
+
+alter table statek
+    -> modify column max_ladownosc float;
+
+update statek
+    -> set max_ladownosc = (max_ladownosc * 0.7)
+    -> where data_wodowania < '2000-12-31';
+
+alter table postac
+    -> add check (wiek<1000);
+
+zadanie 4
