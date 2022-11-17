@@ -25,9 +25,7 @@ alter table postac
 
 zadanie 2.
 
-a) 
-
---Strasznie długo męczyłem się z tym podpunktem bo z jakiegoś powodu ilekroć próbowałem wstawić klucz główny pesel, to sql informował mnie że primary key dalej istnieje, więc w desperacji usunąłem z tabeli wszystkie klucze
+a)
 
 alter table postac
     -> drop constraint `postac_ibfk_1`;
@@ -117,3 +115,31 @@ alter table postac
 zadanie 4
 
 insert into postac (id_postaci,nazwa,pesel) values (8,'Loko',11111111166);
+
+create table Marynarz LIKE postac;
+
+insert into Marynarz
+    -> select * from postac
+    -> where nazwa_statku LIKE '%statek%';
+
+zadanie 5
+
+update Marynarz
+    -> set nazwa_statku = NULL;
+
+delete from Marynarz where nazwa = "Birger";
+
+delete from statek where nazwa_statku like '%%';
+
+drop table statek;
+
+create table zwierz(
+id int primary key auto_increment not null,
+nazwa varchar(30),
+wiek int);
+
+
+
+
+
+
