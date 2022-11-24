@@ -1,0 +1,3 @@
+zadanie 1.
+ select avg(waga) as sredniawaga from kreatura;
+select avg(waga) as sredniawaga, count(rodzaj) as rodzajkreatury from kreatura group by rodzaj;
