@@ -138,7 +138,7 @@ id int primary key auto_increment not null,
 nazwa varchar(30),
 wiek int);
 
-
+insert into Marynarz(nazwa,wiek) select nazwa,wiek FROM postac where rodzaj='ptak' or rodzaj='waz';
 
 
 
