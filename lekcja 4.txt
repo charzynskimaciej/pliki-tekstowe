@@ -16,3 +16,7 @@ zadanie 3.
  select kreatura.nazwa, zasob.nazwa
     -> from kreatura, zasob, ekwipunek
     -> where kreatura.idkreatury = ekwipunek.idkreatury and zasob.idzasobu = ekwipunek.idzasobu;
+
+select kreatura.nazwa, ekwipunek.idkreatury from kreatura
+    -> left join ekwipunek on kreatura.idkreatury = ekwipunek.idkreatury
+    -> where ekwipunek.idkreatury IS NULL;
