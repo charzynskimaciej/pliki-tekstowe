@@ -13,4 +13,6 @@ zadanie 3.
     -> from kreatura
     -> inner join ekwipunek on kreatura.idkreatury = ekwipunek.idkreatury;
 
-
+ select kreatura.nazwa, zasob.nazwa
+    -> from kreatura, zasob, ekwipunek
+    -> where kreatura.idkreatury = ekwipunek.idkreatury and zasob.idzasobu = ekwipunek.idzasobu;
