@@ -9,9 +9,10 @@ select nazwa,avg(waga) as 'srednia waga' from zasob where ilosc>=4 group by nazw
 select nazwa, count(distinct nazwa) as roznenazwy from zasob group by nazwa having min(ilosc)>10;
 
 zadanie 3.
- select kreatura.nazwa, ekwipunek.ilosc
+ select kreatura.nazwa, sum(ekwipunek.ilosc) as ilosc
     -> from kreatura
-    -> inner join ekwipunek on kreatura.idkreatury = ekwipunek.idkreatury;
+    -> inner join ekwipunek on kreatura.idkreatury = ekwipunek.idkreatury group by kreatura.nazwa;
+
 
  select kreatura.nazwa, zasob.nazwa
     -> from kreatura, zasob, ekwipunek
