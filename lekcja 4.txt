@@ -4,7 +4,6 @@ select avg(waga) as sredniawaga, count(rodzaj) as rodzajkreatury from kreatura g
 select date_format(from_days(datediff(now(),'dataUr')), '%Y')+0 as sredniwiek from kreatura order by rodzaj;
 
 zadanie 2.
-zadanie 2.
 select rodzaj,sum(waga) as 'suma wag' from zasob group by rodzaj;
 select nazwa,avg(waga) as 'srednia waga' from zasob where ilosc>=4 group by nazwa having sum(waga)>10;
 select nazwa, count(distinct nazwa) as roznenazwy from zasob group by nazwa having min(ilosc)>10;
