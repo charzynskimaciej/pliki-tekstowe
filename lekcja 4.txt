@@ -21,3 +21,10 @@ zadanie 3.
 select kreatura.nazwa, ekwipunek.idkreatury from kreatura
     -> left join ekwipunek on kreatura.idkreatury = ekwipunek.idkreatury
     -> where ekwipunek.idkreatury IS NULL;
+
+zadanie 4.
+select kreatura.nazwa, group_concat(zasob.nazwa) from ekwipunek
+    -> natural join kreatura, zasob
+    -> where kreatura.rodzaj='wiking' and kreatura.dataUr LIKE "167%"
+    -> group by kreatura.nazwa;
+
