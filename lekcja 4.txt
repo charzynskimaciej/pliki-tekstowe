@@ -28,3 +28,7 @@ select kreatura.nazwa, group_concat(zasob.nazwa) from ekwipunek
     -> where kreatura.rodzaj='wiking' and kreatura.dataUr LIKE "167%"
     -> group by kreatura.nazwa;
 
+select kreatura.nazwa from kreatura
+    -> join ekwipunek on kreatura.idkreatury=ekwipunek.idkreatury
+    -> join zasob on ekwipunek.idzasobu=zasob.idzasobu
+    -> where zasob.rodzaj LIKE 'jedzenie' order by kreatura.dataur desc limit 5;
