@@ -32,3 +32,8 @@ select kreatura.nazwa from kreatura
     -> join ekwipunek on kreatura.idkreatury=ekwipunek.idkreatury
     -> join zasob on ekwipunek.idzasobu=zasob.idzasobu
     -> where zasob.rodzaj LIKE 'jedzenie' order by kreatura.dataur desc limit 5;
+    
+    mysql> select k1.nazwa AS Kreatura1, k2.nazwa as Kreatura2
+    -> from kreatura k1
+    -> JOIN kreatura k2 ON k2.idKreatury = k1.idKreatury + 5;
+
