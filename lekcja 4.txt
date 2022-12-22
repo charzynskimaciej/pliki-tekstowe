@@ -36,4 +36,13 @@ select kreatura.nazwa from kreatura
     mysql> select k1.nazwa AS Kreatura1, k2.nazwa as Kreatura2
     -> from kreatura k1
     -> JOIN kreatura k2 ON k2.idKreatury = k1.idKreatury + 5;
+    
+    zadanie 5.
+     select avg(zasob.waga) from zasob
+    -> join ekwipunek on zasob.idzasobu = ekwipunek.idzasobu
+    -> join kreatura on kreatura.idkreatury = ekwipunek.idkreatury
+    -> where kreatura.rodzaj not in ('waz','malpa') and ekwipunek.ilosc<30
+    -> group by kreatura.rodzaj;
+
+
 
