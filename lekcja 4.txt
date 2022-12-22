@@ -43,6 +43,11 @@ select kreatura.nazwa from kreatura
     -> join kreatura on kreatura.idkreatury = ekwipunek.idkreatury
     -> where kreatura.rodzaj not in ('waz','malpa') and ekwipunek.ilosc<30
     -> group by kreatura.rodzaj;
+    
+    select rodzaj, MIN(dataUr) as dataurmin, MAX(dataUr) as dataurmax, 
+    -> MIN(nazwa) as nazwamin, MAX(nazwa) as nazwamax
+    -> from kreatura
+    -> group by rodzaj;
 
 
 
